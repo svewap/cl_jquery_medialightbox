@@ -1,0 +1,90 @@
+plugin.cljquerymedialightbox {
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[fast, slow, normal]; label=Animation speed
+	animation_speed = fast
+
+	# cat=plugin.cl_jquerymedialightbox; type=int; label= slideshow
+	slideshow = 5000
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label= Autoplay slideshow
+	autoplay_slideshow = false
+
+	# cat=plugin.cl_jquerymedialightbox; type=string; label= opacity: Value between 0 and 1
+	opacity = 0.80
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label= Show title
+	show_title = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label= Allow resize: Resize the photos bigger than viewport
+	allow_resize = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=int; label= Default width
+	default_width = 500
+
+	# cat=plugin.cl_jquerymedialightbox; type=int; label= Default height
+	default_height = 344
+
+	# cat=plugin.cl_jquerymedialightbox; type=string; label=The separator for the gallery counter 1 "of" 2
+	counter_separator_label = /
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[pp_default,light_rounded,dark_rounded,light_square,dark_square,facebook]; label=Theme
+	theme = pp_default
+
+	# cat=plugin.cl_jquerymedialightbox; type=int; label= Horizontal padding: The padding on each side of the picture
+	horizontal_padding = 20
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Hide flash: Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto
+	hideflash = false
+
+	# cat=plugin.cl_jquerymedialightbox; type=string; label=wmode
+	wmode = opaque
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Automatically start videos
+	autoplay = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Modal: If set to true, only the close button will close the window
+	modal = false
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Deeplink
+	deeplinking = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Overlay: If set to true, a gallery will overlay the fullscreen image on mouse over
+	overlay_gallery = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=options[true,false]; label=Keyboard shortcut: Set to false if you open forms inside prettyPhoto
+	keyboard_shortcuts = true
+
+	# cat=plugin.cl_jquerymedialightbox; type=string; label=Change pricture callback
+	changepicturecallback = function(){}
+
+	# cat=plugin.cl_jquerymedialightbox; type=string; label=callback: Called when prettyPhoto is closed
+	callback = function(){}
+
+
+
+
+
+	# cat=plugin.cl_jquerymedialightbox; type=file[png,jpg,gif,jpeg]; label=Preview image for videos
+	videopreviewimage.src = typo3conf/ext/cl_jquery_medialightbox/Resources/Public/Images/preview.gif
+
+	# cat=plugin.cl_jquerymedialightbox; type=file[png,jpg,gif,jpeg]; label=preview image button for videos
+	videopreviewimagebutton.src = typo3conf/ext/cl_jquery_medialightbox/Resources/Public/Images/overlay.fw.png
+
+	# cat=plugin.cl_jquerymedialightbox; type=int+; label=Max width of preview image
+	videopreviewimage.maxwidth = 250
+
+	# cat=plugin.cl_jquerymedialightbox; type=int+; label=Max height of preview image
+	videopreviewimage.maxheight = 250
+
+	# cat=plugin.cl_jquerymedialightbox/dims/d1; type=int+; label= lightBox Max Image Width: Defines the maxwidth of the image shown in the Lightbox.
+	lightBoxMaxW = 900
+
+	# cat=plugin.cl_jquerymedialightbox/dims/d2; type=int+; label= lightBox Max Image Height: Defines the maxheight of the image shown in the Lightbox.
+	lightBoxMaxH = 600
+
+	# cat=plugin.cl_jquerymedialightbox//o1; type=options[titleText,altText,imagecaption]; label= Caption Field: Which tt_content field to use as caption inside the Lightbox.
+	captionField = imagecaption
+
+
+}
+

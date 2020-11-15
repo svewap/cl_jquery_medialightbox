@@ -1,0 +1,114 @@
+
+page.includeJSFooter {
+
+	videojs = EXT:cl_jquery_medialightbox/Resources/Public/JavaScript/video.js
+}
+
+page.includeCSS {
+
+	videojs = EXT:cl_jquery_medialightbox/Resources/Public/CSS/video-js.css
+	videojs.media = screen
+	videojs.compress = true
+
+	medialightbox = EXT:cl_jquery_medialightbox/Resources/Public/CSS/medialightbox.css
+	medialightbox.media = screen
+	medialightbox.compress = true
+}
+
+
+
+page.jsFooterInline2.800 = COA
+page.jsFooterInline2.800 {
+	wrap = jQuery(document).ready(function() { jQuery('a[class*=lightbox]').prettyPhoto({|}); })
+	10 = TEXT
+	10.value (
+		'animation_speed' : '{$plugin.cljquerymedialightbox.animation_speed}',
+		'slideshow' : {$plugin.cljquerymedialightbox.slideshow},
+		'autoplay_slideshow' : {$plugin.cljquerymedialightbox.autoplay_slideshow},
+		'opacity' : {$plugin.cljquerymedialightbox.opacity},
+		'show_title' : {$plugin.cljquerymedialightbox.show_title},
+		'allow_resize' : {$plugin.cljquerymedialightbox.allow_resize},
+		'default_width' : {$plugin.cljquerymedialightbox.default_width},
+		'default_height' : {$plugin.cljquerymedialightbox.default_height},
+		'counter_separator_label' : '{$plugin.cljquerymedialightbox.counter_separator_label}',
+		'theme' : '{$plugin.cljquerymedialightbox.theme}',
+		'horizontal_padding' : {$plugin.cljquerymedialightbox.horizontal_padding},
+		'hideflash' : {$plugin.cljquerymedialightbox.hideflash},
+		'wmode' : '{$plugin.cljquerymedialightbox.wmode}',
+		'autoplay' : {$plugin.cljquerymedialightbox.autoplay},
+		'modal' : {$plugin.cljquerymedialightbox.modal},
+		'deeplinking' : {$plugin.cljquerymedialightbox.deeplinking},
+		'overlay_gallery' : {$plugin.cljquerymedialightbox.overlay_gallery},
+		'keyboard_shortcuts' : {$plugin.cljquerymedialightbox.keyboard_shortcuts},
+		'changepicturecallback' : {$plugin.cljquerymedialightbox.changepicturecallback},
+		'callback' : {$plugin.cljquerymedialightbox.callback},
+		'ie6_fallback' : {$plugin.cljquerymedialightbox.ie6_fallback},
+		'social_tools': ''
+	)
+}
+
+page.jsInlineFooter.840 = TEXT
+page.jsInlineFooter.840.value (
+	videojs.options.flash.swf = "/typo3conf/ext/cl_jquery_medialightbox/Resources/Public/SWF/video-js.swf";
+
+)
+
+page.jsFooterInline.840 = COA
+page.jsFooterInline.840 {
+
+	10 = TEXT
+	10.value (
+		var ie_old = false;
+		if(navigator.appVersion.indexOf("MSIE 8.")!=-1) ie_old = true;
+		if(navigator.appVersion.indexOf("MSIE 7.")!=-1) ie_old = true;
+
+	)
+
+	20 = TEXT
+	20.wrap = jQuery(document).ready(function() { | });
+	20.value (
+
+		if (ie_old) {
+
+			$(".medialightbox").fancybox({
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: false,
+				autoSize	: false,
+				width: 600,
+				height: 400,
+				afterShow : function() {
+					videojs(this.content[0].id).play();
+				}
+			});
+
+		} else {
+			$(".medialightbox").fancybox({
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: true,
+				autoSize	: false,
+				afterShow : function() {
+					videojs(this.content[0].id).play();
+				}
+			});
+		}
+
+	)
+}
+
+
+#tt_content.media.20.fileExtHandler.mp4 = MEDIALIGHTBOX
+#tt_content.media.20.fileExtHandler.flv = MEDIALIGHTBOX
+#tt_content.media.20.fileExtHandler.swf = MEDIALIGHTBOX
+
+tt_content.media.20.mimeConf.swfobject.video.previewimage {
+  defaultsrc = {$plugin.cljquerymedialightbox.videopreviewimage.src}
+  maxwidth = {$plugin.cljquerymedialightbox.videopreviewimage.maxwidth}
+  maxheight = {$plugin.cljquerymedialightbox.videopreviewimage.maxheight}
+  buttonsrc = {$plugin.cljquerymedialightbox.videopreviewimagebutton.src}
+}
+
+
+
+
