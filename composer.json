@@ -1,0 +1,12 @@
+{
+    "name": "svewap/cl_jquery_medialightbox",
+    "description": "",
+    "type": "typo3-cms-extension",
+    "homepage": "http://wappler.systems",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^7.6"
+    },
+    "replace": {
+    }
+}
